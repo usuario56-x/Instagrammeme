@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat com 5 Salas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="login-container">
+        <input type="text" id="username-input" placeholder="Seu nome de usuário...">
+        <button id="login-button">Entrar</button>
+    </div>
+    <div id="chat-container" style="display: none;">
+        <div id="room-selection">
+            <button class="room-button" data-room="sala1">Sala 1</button>
+            <button class="room-button" data-room="sala2">Sala 2</button>
+            <button class="room-button" data-room="sala3">Sala 3</button>
+            <button class="room-button" data-room="sala4">Sala 4</button>
+            <button class="room-button" data-room="sala5">Sala 5</button>
+        </div>
+        <div id="messages"></div>
+        <div id="input-container">
+            <input type="text" id="message-input" placeholder="Digite sua mensagem...">
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
