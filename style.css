@@ -1,0 +1,65 @@
+body {
+    font-family: 'Roboto', sans-serif; /* Fonte mais moderna */
+    background-color: #f8f9fa; /* Fundo levemente acinzentado */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-container {
+    flex-grow: 1; /* Ocupa todo o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-bottom: 20px; /* Espaço extra na parte inferior */
+}
+
+.message {
+    background-color: #e0f2f7; /* Tom de azul claro para mensagens */
+    padding: 16px 20px; /* Aumenta o padding */
+    margin-bottom: 16px; /* Aumenta o espaçamento entre mensagens */
+    border-radius: 24px; /* Arredonda mais os cantos */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    line-height: 1.6; /* Melhora o espaçamento entre linhas */
+    word-wrap: break-word; /* Permite quebras de palavras longas */
+}
+
+.typing {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#input-area {
+    display: flex;
+    padding: 10px;
+    background-color: #fff; /* Fundo branco para a área de entrada */
+    border-top: 1px solid #dee2e6; /* Linha divisória */
+}
+
+#message-input {
+    flex-grow: 1;
+    padding: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 24px;
+    font-size: 18px;
+    outline: none; /* Remove a borda de foco */
+}
+
+#send-button {
+    background-color: #1a73e8; /* Tom de azul para o botão */
+    color: white;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 24px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 10px;
+}
