@@ -15,27 +15,8 @@ function displayMessages() {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-function sendMessage() {
-    const message = messageInput.value.trim();
-    if (message) {
-        messages.push(message);
-        localStorage.setItem('chatMessages', JSON.stringify(messages));
-        messageInput.value = '';
-        displayMessages();
-    }
-}
-
-displayMessages();
-
-sendButton.addEventListener('click', sendMessage);
-
-messageInput.addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        sendMessage();
-    }
-});
-
-messageInput.addEventListener('input', function() {
+function updateChat() {
+    displayMessages();
     if (messageInput.value.trim()) {
         const typingMessage = document.createElement('div');
         typingMessage.classList.add('typing');
@@ -47,4 +28,26 @@ messageInput.addEventListener('input', function() {
             typingMessage.remove();
         }
     }
+}
+
+function sendMessage() {
+    const message = messageInput.value.trim();
+    if (message) {
+        messages.push(message);
+        localStorage.setItem('chatMessages', JSON.stringify(messages));
+        messageInput.value = '';
+        updateChat(); // Atualiza o chat após o envio
+    }
+}
+
+updateChat(); // Carrega o chat inicialmente
+
+sendButton.addEventListener('click', sendMessage);
+
+messageInput.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
 });
+
+messageInput.addEventListener('input', updateChat); // Atualiza o chat ao digitar
